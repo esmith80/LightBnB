@@ -1,8 +1,10 @@
 ### lightbnb
 
-# Notes on database schema
+## Notes on database schema
 
-Foreign keys in property_reviews table, I omitted ON DELETE CASCADE for:
+#Foreign keys in property_reviews table
+
+I omitted ON DELETE CASCADE for:
 
 1) guest_id - if a user leaves the service, their review is still useful to other users - this value can't be null, so I left it;
 
@@ -14,3 +16,7 @@ Note that I left in the ON DELETE CASCADE for property_id since if there is no p
 reviews are of no value. I would implement something to remove the entire property_review record at this point.
 
 I made the message optional (about the rating they left).
+
+
+##QUESTIONS:
+I noticed Compass sample data has NOT NULL in many more places and DELETE ON CASCADE used in every instance of a foreign key - when might you NOT do this?
